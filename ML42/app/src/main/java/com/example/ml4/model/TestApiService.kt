@@ -26,10 +26,11 @@ class TestApiService {
     companion object{
         const val SECRET_KEY = "\$2b\$10\$YP0i9MWBsQXfTDQHR.bEYOTiiB8zqJm7I7Cpii8xaMedbf5gc3G2."
     }
-    interface WeatherCallback{
-        fun onSuccess(weather:MyJson)
+    interface wCallback{
+        fun onSuccess(json:MyJson)
         fun onFailure()}
-    fun getLocalJson(callback:WeatherCallback) {
+
+    fun getLocalJson(callback:wCallback) {
         api.getLocalJson(SECRET_KEY).enqueue(object: Callback<MyJson>
         {
             override fun onResponse(call:Call<MyJson>,response: Response<MyJson>)
@@ -40,6 +41,7 @@ class TestApiService {
                     callback.onFailure()}
             override fun onFailure(call: Call<MyJson>, t:Throwable)
             {
-                callback.onFailure()}})
+                callback.onFailure()}
+        })
     }
 }

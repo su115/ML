@@ -21,7 +21,7 @@ class MainActivity : AppCompatActivity() {
     private  fun initViev(){
         nameTV = findViewById(R.id.name)
         addressTV = findViewById(R.id.address)
-        phoneTV = findViewById(R.id.phone1)
+        phoneTV = findViewById(R.id.phone)
     }
 
     override fun onResume() {
@@ -31,7 +31,7 @@ class MainActivity : AppCompatActivity() {
     private fun loadData() {
         Log.d("API","loadData")
         val service= TestApiService()
-        service.getLocalJson(object:TestApiService.WeatherCallback
+        service.getLocalJson(object:TestApiService.wCallback
         {
             override fun onSuccess(weather:MyJson)
             {
