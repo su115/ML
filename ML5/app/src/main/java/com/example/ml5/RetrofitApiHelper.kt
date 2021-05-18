@@ -8,13 +8,14 @@ import com.example.ml5.DataBase.AppDatabase
 import com.example.ml5.DataBase.Delivery
 
 
-class RetrofitApiHelper{
+class RetrofitApiHelper(context: Context){
      lateinit var db: AppDatabase
-
+     lateinit var context: Context
 
    // initDatabase()
-    fun myinit(){
-        this.db = Room.databaseBuilder(this , AppDatabase::class.java,"test_db").allowMainThreadQueries().build()
+    init{
+        this.context = context
+        this.db = Room.databaseBuilder(context , AppDatabase::class.java,"test_db").allowMainThreadQueries().build()
 
     }
 
