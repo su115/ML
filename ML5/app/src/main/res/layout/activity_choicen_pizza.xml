@@ -1,0 +1,74 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:textAlignment="center">
+
+    <LinearLayout
+        android:id="@+id/container_here_cc"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:background="#D77E7E"
+        android:orientation="vertical"
+        android:paddingLeft="20sp"
+        android:paddingTop="20sp"
+        android:paddingEnd="20sp"
+        android:paddingRight="20sp"
+        android:paddingBottom="20sp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <ImageView
+            android:id="@+id/pizza_photo_cc"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:contentDescription="@string/app_name" />
+
+        <TextView
+            android:id="@+id/pizza_name_cc"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+
+            android:text="Pizza name"
+            android:textColor="#F6F3F3"
+            android:textSize="30sp" />
+
+        <TextView
+            android:id="@+id/price_cc"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+
+            android:text="Price"
+            android:textColor="#F6F3F3"
+            android:textSize="30sp" />
+
+        <TextView
+            android:id="@+id/link_cc"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+
+            android:text="link"
+            android:textColor="#F6F3F3"
+            android:textSize="30sp" />
+
+        <TextView
+            android:id="@+id/mass_cc"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="mass"
+            android:textColor="#F6F3F3"
+            android:textSize="30sp" />
+
+        <TextView
+            android:id="@+id/diameter_cc"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="diameter"
+            android:textColor="#F6F3F3"
+            android:textSize="30sp" />
+    </LinearLayout>
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>

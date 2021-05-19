@@ -1,55 +1,55 @@
 package com.example.ml5
 
-import android.app.Application
 import android.content.Context
 import android.util.Log
-import androidx.room.Room
-import com.example.ml5.DataBase.AppDatabase
-import com.example.ml5.DataBase.Delivery
-
+import android.widget.Toast
+import com.example.ml5.Server.LPizza
+import com.example.ml5.Server.Pizza
+import com.example.ml5.Server.TestApiService
 
 class RetrofitApiHelper(context: Context){
-     lateinit var db: AppDatabase
-     lateinit var context: Context
+    var context: Context
+    lateinit var lpizza:LPizza
 
-   // initDatabase()
-    init{
+    init {
         this.context = context
-        this.db = Room.databaseBuilder(context , AppDatabase::class.java,"test_db").allowMainThreadQueries().build()
 
     }
 
+    fun loadData(): LPizza? {
+        //load data in log
 
-       // testDB()
+        Log.d("API", "loadData")
+        val service= TestApiService()
+        service.getLocalJson(object : TestApiService.wCallback {
+            override fun onSuccess(json: LPizza) {
+                for (i in json.pizzas!!) {
 
-    fun testDB(){
-        var f1=Delivery(1,"Kruta","9:00",22.20,true,5)
-        var f2=Delivery(2,"Dashkevucha","10:00",15.20,false,3)
-        var f3=Delivery(3,"Zelena","11:00",3.22,false,1)
-        var f4=Delivery(4,"Korina","12:00",9.34,false,2)
-        var f5=Delivery(5,"Zamarstunivska","13:00",32.20,true,6)
+                    displayJson(i)
+                }
 
-        // Insert
-        db.DeliveryDao().insert(f1)
-        log("first "+f1.adress)
-        db.DeliveryDao().insert(f2)
-        log("second "+f2.adress)
-        db.DeliveryDao().insert(f3)
-        log("third "+f3.adress)
-        db.DeliveryDao().insert(f4)
-        log("4th "+f4.adress)
-        db.DeliveryDao().insert(f5)
-        log("5th "+f5.adress)
+            }
 
-        // Update
-        db.DeliveryDao().update(Delivery(2,"Nobody_Know","00:00",100.0,false,10))
-        log("Update second")
-        //Delete
-        db.DeliveryDao().delete(db.DeliveryDao().getById(1))
-        log("Delete uid:1")
+            override fun onFailure() {
+                displayError()
+            }
+        })
+
+                var s = service.api.getLocalJson().execute().body()
+                return s
+
     }
-    private fun log(message: String){
-        Log.d("DataBaseTesting",message)
+
+    private fun displayJson(pizza: Pizza) {
+        Log.d("API", pizza.pizzaName.toString())
     }
+
+
+    private fun displayError()
+    {
+        Log.d("API", "error loading data")
+        Toast.makeText(this.context, "Some PROBLEMS!!!", Toast.LENGTH_LONG).show()
+    }
+
 
 }
