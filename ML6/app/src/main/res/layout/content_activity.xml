@@ -1,0 +1,81 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <TextView
+        android:id="@+id/frequency_cc"
+        android:layout_width="100sp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="4dp"
+        android:layout_marginTop="12dp"
+        android:padding="5sp"
+        android:text="frequency"
+        android:textSize="30sp"
+        app:layout_constraintStart_toStartOf="@+id/venueName_cc"
+        app:layout_constraintTop_toBottomOf="@+id/venueName_cc" />
+
+    <TextView
+        android:id="@+id/level_cc"
+        android:layout_width="100sp"
+        android:layout_height="0dp"
+        android:layout_marginStart="4dp"
+        android:layout_marginTop="36dp"
+        android:padding="5sp"
+        android:text="level"
+        android:textSize="30sp"
+        app:layout_constraintStart_toStartOf="@+id/bssid_cc"
+        app:layout_constraintTop_toBottomOf="@+id/bssid_cc" />
+
+    <TextView
+        android:id="@+id/bssid_cc"
+        android:layout_width="100sp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="4dp"
+        android:layout_marginTop="12dp"
+        android:padding="5sp"
+        android:text="BSSID"
+        android:textSize="30sp"
+        app:layout_constraintStart_toStartOf="@+id/ssid_cc"
+        app:layout_constraintTop_toBottomOf="@+id/ssid_cc" />
+
+    <TextView
+        android:id="@+id/venueName_cc"
+        android:layout_width="100sp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="20dp"
+        android:padding="5sp"
+        android:text="venueName"
+        android:textSize="30sp"
+        app:layout_constraintStart_toStartOf="@+id/level_cc"
+        app:layout_constraintTop_toBottomOf="@+id/level_cc" />
+
+    <TextView
+        android:id="@+id/capabitities_cc"
+        android:layout_width="100sp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="20dp"
+        android:layout_marginTop="40dp"
+        android:padding="5sp"
+        android:text="capabilities"
+        android:textSize="30sp"
+        app:layout_constraintStart_toStartOf="@+id/frequency_cc"
+        app:layout_constraintTop_toBottomOf="@+id/frequency_cc" />
+
+    <TextView
+        android:id="@+id/ssid_cc"
+        android:layout_width="100sp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="32dp"
+        android:layout_marginTop="4dp"
+        android:padding="5sp"
+        android:text="SSID"
+        android:textSize="30sp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>
